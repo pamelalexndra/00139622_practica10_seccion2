@@ -3,9 +3,9 @@ import { db } from "../data/connection.js";
 
 export const getUsers = async (req, res) => {
   const { order } = req.query;
-  if (order === "asc") return await getUsersAsc(eq, res);
+  if (order === "asc") return await getUsersAsc(req, res);
 
-  await getUsersDesc(eq, res);
+  await getUsersDesc(req, res);
 };
 
 export const getUsersDesc = async (req, res) => {
